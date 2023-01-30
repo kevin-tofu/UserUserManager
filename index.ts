@@ -10,11 +10,11 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
-app.use('/account', router_users)
 
 app.get('/', ( req: Request, res: Response ) => {
-    res.send('connected');
-} );
+  res.send('connected').status(200);
+});
+app.use('/account', router_users)
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   const {statusCode = 500, message} = err
@@ -25,4 +25,5 @@ const server = app.listen(config.APP_PORT, () =>
 🚀 Server ready at: http://localhost:${config.APP_PORT}
 ⭐️ See sample requests: http://pris.ly/e/ts/rest-express#3-using-the-rest-api`),
 )
-exports.module = app
+exports.app = app
+

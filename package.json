@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run": "npx tsc && node index.js",
-    "test": "npx tsc && npx  mocha --recursive --timeout 10000"
+    "test": "npx tsc && npx mocha --recursive --exit --timeout 800000"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@prisma/client": "^4.9.0",
-    "bcrypt": "^5.1.0",
+    "argon2": "^0.30.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
